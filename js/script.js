@@ -12,7 +12,10 @@ async function fetchAndDisplayAPOD() {
     apodContainer.innerHTML = '';
     const loading = document.createElement('div');
     loading.className = 'loading';
-    loading.textContent = 'Loading space images...';
+    // Friendly message with emoji and ARIA so assistive tech announces status
+    loading.textContent = '🔄 Loading space photos…';
+    loading.setAttribute('role', 'status');
+    loading.setAttribute('aria-live', 'polite');
     apodContainer.appendChild(loading);
 
     // Disable the button while fetching to prevent duplicate requests.
