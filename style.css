@@ -140,6 +140,22 @@ button:hover {
   border-radius: 6px;
 }
 
+/* Smooth scale/raise effect on hover/focus for the whole card */
+.gallery-item,
+.apod-item {
+  transition: transform 260ms ease, box-shadow 260ms ease;
+  will-change: transform;
+  transform-origin: center;
+}
+
+.apod-item:hover,
+.apod-item:focus,
+.gallery-item:hover,
+.gallery-item:focus {
+  transform: scale(1.03) translateY(-6px);
+  box-shadow: 0 20px 48px rgba(16,24,40,0.16);
+}
+
 /* Video iframe styling - constrained and responsive */
 .apod-video {
   width: 100%;
